@@ -20,7 +20,7 @@
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
-            <td>Modify</td>
+            <td><a class="btn btn-primary" href="">Modify</a></td>
           </tr>
         @empty
           <h1>No product found</h1>
