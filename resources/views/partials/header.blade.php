@@ -1,3 +1,5 @@
 <header class="text-center mt-3">
-  <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo">
+  <a href="{{ route('home') }}">
+    <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Logo">
+  </a>
 </header>
