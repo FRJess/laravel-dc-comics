@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Comic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,10 @@ class ComicsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $array_comics = config('comics');
+
+        foreach ($array_comics as $comic_item){
+            $new_comic = new Comic();
+        }
     }
 }
