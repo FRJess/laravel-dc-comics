@@ -11,8 +11,8 @@
         <input type="text" class="form-control" name="title" id="title" placeholder="Add title">
       </div>
       <div class="mb-3">
-        <label for="image" class="form-label">Image</label>
-        <input type="text" class="form-control" name="image" id="image" placeholder="Add image URL">
+        <label for="thumb" class="form-label">Image</label>
+        <input type="text" class="form-control" name="thumb" id="thumb" placeholder="Add image URL">
       </div>
       <div class="mb-3">
         <label for="series" class="form-label">Series</label>
