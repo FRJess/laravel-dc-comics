@@ -3,6 +3,16 @@
 @section('content')
   <div class="container">
     <h1>Comics list</h1>
+
+    @if (session('deleted'))
+      <div>
+        <div class="alert alert-success" role="alert">
+          {{ session('deleted') }}
+        </div>
+      </div>
+    @endif
+
+
     <table class="table table-dark">
       <thead>
         <tr>
@@ -21,6 +31,7 @@
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
             <td>
+
               <a href="{{ route('comics.show', $comic) }}" class="btn btn-info"><i class="fa-regular fa-eye"></i></a>
               <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning mx-2"><i
                   class="fa-solid fa-pen-to-square"></i></a>

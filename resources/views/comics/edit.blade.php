@@ -10,8 +10,9 @@
       <button type="submit" class="btn btn-danger" title="dete"><i class="fa-solid fa-trash"></i></button>
     </form>
 
-    <form action="{{ route('comics.update', $comic) }}" method="PUT">
+    <form action="{{ route('comics.update', $comic) }}" method="POST">
       @csrf
+      @method('PUT')
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input type="text" class="form-control" name="title" id="title" value="{{ $comic->title }}"
