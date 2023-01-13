@@ -76,7 +76,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -88,7 +88,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $form_data = $request->all();
+
+        if($form_data['title'] != $comic->title){
+            $form_data['slug'] = Comic::generateSlug($form_data['title']);
+        }else{
+            $form_data['slug'] = $comic->slug;
+        }
+
+        $comic->update($form_data);
+
+        return redirect()->route('comics.show', $comic);
     }
 
     /**
@@ -99,6 +109,8 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }

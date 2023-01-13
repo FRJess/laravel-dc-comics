@@ -3,8 +3,14 @@
 @section('content')
   <div class="container">
     <h1>Edit comic</h1>
+    <form onsubmit="return confirm('Do you want to delete {{ $comic->title }}?')" class="d-inline"
+      action="{{ route('comics.destroy', $comic) }}" method="POST">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="btn btn-danger" title="dete"><i class="fa-solid fa-trash"></i></button>
+    </form>
 
-    <form action="{{ route('comics.update') }}" method="POST">
+    <form action="{{ route('comics.update', $comic) }}" method="PUT">
       @csrf
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
@@ -40,7 +46,7 @@
         <label for="description" class="form-label">Description</label>
         <textarea class="form-control" name="description" id="description" value="{{ $comic->description }}" rows="3"></textarea>
       </div>
-      <button type="submit" class="btn btn-primary mb-5">Add</button>
+      <button type="submit" class="btn btn-primary mb-5">Confirm</button>
 
     </form>
   </div>
