@@ -41,10 +41,26 @@ class ComicController extends Controller
         $request->validate([
             'title' => 'required|max:100|min:2',
             'thumb' => 'required|max:255|min:10',
-            'series' => 'max:50|min:2',
-            'type' => 'max:20|min:2',
+            'series' => 'max:50',
+            'type' => 'max:20',
             'price' => 'required|max:10|min:2',
             'sale_date' => 'required|max:15|min:2',
+        ],
+        [
+            'title.required' => 'Comic title is required',
+            'title.max' => 'The maximum lenght for comic title is :max characters',
+            'title.min' => 'The minimum lenght for comic title is :min characters',
+            'thumb.required' => 'Image URL is required',
+            'thumb.max' => 'The maximum lenght for Image URL is :max characters',
+            'thumb.min' => 'The minimum lenght for Image URL is :min characters',
+            'series.thumb' => 'The maximum lenght for series is :max characters',
+            'type.thumb' => 'The maximum lenght for type is :max characters',
+            'price.required' => 'Price is required',
+            'price.max' => 'The maximum lenght for price is :max characters',
+            'price.min' => 'The minimum lenght for price is :min characters',
+            'sale_date.required' => 'Release date is required',
+            'sale_date.max' => 'The maximum lenght for release date is :max characters',
+            'sale_date.min' => 'The minimum lenght for release date is :min characters',
         ]);
 
         $new_comic = new Comic();
