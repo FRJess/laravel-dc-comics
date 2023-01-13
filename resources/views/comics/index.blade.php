@@ -20,7 +20,12 @@
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
-            <td><a class="btn btn-primary" href="{{ route('comics.show', $comic) }} title="show">Modify</a></td>
+            <td>
+              <a href="{{ route('comics.show', $comic) }}" class="btn btn-info"><i class="fa-regular fa-eye"></i></a>
+              <a href="{{ route('comics.edit', $comic) }}" class="btn btn-warning mx-2"><i
+                  class="fa-solid fa-pen-to-square"></i></a>
+              <a href="{{ route('comics.show', $comic) }}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </td>
           </tr>
         @empty
           <h1>No product found</h1>
