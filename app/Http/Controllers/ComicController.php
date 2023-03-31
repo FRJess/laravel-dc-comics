@@ -81,6 +81,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
+
         $form_data = $request->all();
 
         if($form_data['title'] != $comic->title){
