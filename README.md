@@ -1,5 +1,9 @@
-Dashboard per gestione un database di comics. 🦸🏻‍♀️
+# Dashboard Comics
 
-I principi utilizzati sono quelli della CRUD: Create, Read, Update, Delete.
+Dashboard creata per gestire un sito di comics.
 
-👩🏻‍💻 Il progetto è stato realizzato con HTML/CSS, PHP e l'utilizzo del framework Laravel.
+## Tech utilizzate
+
+- [VS Code](https://code.visualstudio.com/)
+- [Laravel](https://laravel.com)
+- HTML/CSS
